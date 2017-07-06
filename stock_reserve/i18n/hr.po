@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: stock-logistics-warehouse (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 07:41+0000\n"
-"PO-Revision-Date: 2017-01-11 15:38+0000\n"
+"POT-Creation-Date: 2017-05-02 01:08+0000\n"
+"PO-Revision-Date: 2017-05-16 19:34+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Croatian (http://www.transifex.com/oca/OCA-stock-logistics-warehouse-8-0/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -123,7 +123,7 @@ msgstr ""
 #. module: stock_reserve
 #: view:stock.reservation:stock_reserve.view_stock_reservation_form
 msgid "Details"
-msgstr ""
+msgstr "Detalji"
 
 #. module: stock_reserve
 #: field:stock.reservation,display_name:0
@@ -133,7 +133,7 @@ msgstr "Naziv "
 #. module: stock_reserve
 #: view:stock.reservation:stock_reserve.view_stock_reservation_search
 msgid "Draft"
-msgstr ""
+msgstr "Skica"
 
 #. module: stock_reserve
 #: field:stock.reservation,date_expected:0
@@ -143,7 +143,7 @@ msgstr ""
 #. module: stock_reserve
 #: view:stock.reservation:stock_reserve.view_stock_reservation_search
 msgid "Group By..."
-msgstr ""
+msgstr "Grupiraj po..."
 
 #. module: stock_reserve
 #: field:stock.reservation,id:0
@@ -311,7 +311,7 @@ msgstr ""
 #. module: stock_reserve
 #: field:stock.reservation,priority:0
 msgid "Priority"
-msgstr ""
+msgstr "Prioritet"
 
 #. module: stock_reserve
 #: field:stock.reservation,procurement_id:0
@@ -495,7 +495,7 @@ msgstr ""
 #: view:stock.reservation:stock_reserve.view_stock_reservation_search
 #: field:stock.reservation,state:0
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: stock_reserve
 #: model:ir.model,name:stock_reserve.model_stock_reservation

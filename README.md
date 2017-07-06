@@ -18,12 +18,14 @@ Please don't hesitate to suggest one of your module to this project. Also, you m
  - https://github.com/OCA/stock-logistics-workflow
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
 [account_move_line_product](account_move_line_product/) | 8.0.1.0.0 | Account Move Line Product
 [account_move_line_stock_info](account_move_line_stock_info/) | 8.0.1.0.0 | Account Move Line Stock Move
+[business_product_location](business_product_location/) | 0.1 | Business Product Location
 [partner_location_auto_create](partner_location_auto_create/) | 8.0.0.1.0 | Partner Location Auto Create
 [stock_account_change_product_valuation](stock_account_change_product_valuation/) | 8.0.1.0.0 | Adjusts valuation of the products and quants when the cost method or type of a product changes
 [stock_account_quant_merge](stock_account_quant_merge/) | 8.0.1.0.0 | Stock Account - Quant merge
@@ -46,14 +48,17 @@ addon | version | summary
 [stock_operation_type_location](stock_operation_type_location/) | 8.0.1.1.0 | Allows to filter locations on stock operations
 [stock_orderpoint_manual_procurement](stock_orderpoint_manual_procurement/) | 8.0.1.0.0 | Allows to create procurement orders from orderpoints instead of relying only on the scheduler
 [stock_orderpoint_uom](stock_orderpoint_uom/) | 8.0.1.0.0 | Allows to create procurement orders in the UoM indicated in the orderpoint
-[stock_putaway_product](stock_putaway_product/) | 8.0.1.0.0 | Set a product location and put-away strategy per product
+[stock_product_location_sorted_by_qty](stock_product_location_sorted_by_qty/) | 8.0.1.0.0 | In the update wizard of quantities for a product, sort the stock location by quantity
+[stock_putaway_product](stock_putaway_product/) | 8.0.1.0.1 | Set a product location and put-away strategy per product
 [stock_quant_manual_assign](stock_quant_manual_assign/) | 8.0.1.1.0 | Stock - Manual assignment of quants
 [stock_quant_merge](stock_quant_merge/) | 8.0.1.0.0 | Stock - Quant merge
+[stock_quant_partner_info](stock_quant_partner_info/) | 8.0.1.1.0 | Stock - Quant partner info
 [stock_reserve](stock_reserve/) | 8.0.0.2.0 | Stock reservations on products
 [stock_reserve_sale](stock_reserve_sale/) | 8.0.1.0.1 | Stock Reserve Sales
 [stock_traceability_operation](stock_traceability_operation/) | 8.0.1.1.0 | Adds operations in traceability and quant history
 [stock_valuation_account_manual_adjustment](stock_valuation_account_manual_adjustment/) | 8.0.1.0.0 | Shows in the product inventory stock value and the accounting value and allows to reconcile them
 [stock_warehouse_orderpoint_stock_info](stock_warehouse_orderpoint_stock_info/) | 8.0.1.0.0 | Reordering rules stock info
+
 
 Unported addons
 ---------------

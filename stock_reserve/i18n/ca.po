@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: stock-logistics-warehouse (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 07:41+0000\n"
-"PO-Revision-Date: 2017-01-13 09:22+0000\n"
+"POT-Creation-Date: 2017-03-29 09:22+0000\n"
+"PO-Revision-Date: 2017-04-25 10:39+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-stock-logistics-warehouse-8-0/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr ""
 #. module: stock_reserve
 #: field:stock.reservation,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Empresa"
 
 #. module: stock_reserve
 #: field:stock.reservation,create_uid:0
@@ -98,7 +98,7 @@ msgstr "Data"
 #. module: stock_reserve
 #: field:stock.reservation,name:0
 msgid "Description"
-msgstr ""
+msgstr "Descripció"
 
 #. module: stock_reserve
 #: field:stock.reservation,partner_id:0
@@ -133,7 +133,7 @@ msgstr "Veure el nom"
 #. module: stock_reserve
 #: view:stock.reservation:stock_reserve.view_stock_reservation_search
 msgid "Draft"
-msgstr ""
+msgstr "Esborrany"
 
 #. module: stock_reserve
 #: field:stock.reservation,date_expected:0
@@ -143,7 +143,7 @@ msgstr ""
 #. module: stock_reserve
 #: view:stock.reservation:stock_reserve.view_stock_reservation_search
 msgid "Group By..."
-msgstr ""
+msgstr "Agrupat per..."
 
 #. module: stock_reserve
 #: field:stock.reservation,id:0
@@ -333,13 +333,13 @@ msgstr ""
 #: view:stock.reservation:stock_reserve.view_stock_reservation_search
 #: field:stock.reservation,product_id:0
 msgid "Product"
-msgstr ""
+msgstr "Producte"
 
 #. module: stock_reserve
 #: model:ir.model,name:stock_reserve.model_product_template
 #: field:stock.reservation,product_tmpl_id:0
 msgid "Product Template"
-msgstr ""
+msgstr "Plantilla del producte"
 
 #. module: stock_reserve
 #: field:stock.reservation,product_uos:0
@@ -365,7 +365,7 @@ msgstr ""
 #: field:stock.reservation,product_qty:0
 #: field:stock.reservation,product_uom_qty:0
 msgid "Quantity"
-msgstr ""
+msgstr "Quantitat"
 
 #. module: stock_reserve
 #: field:stock.reservation,product_uos_qty:0
@@ -495,7 +495,7 @@ msgstr ""
 #: view:stock.reservation:stock_reserve.view_stock_reservation_search
 #: field:stock.reservation,state:0
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #. module: stock_reserve
 #: model:ir.model,name:stock_reserve.model_stock_reservation
@@ -588,12 +588,12 @@ msgstr ""
 #. module: stock_reserve
 #: field:stock.reservation,price_unit:0
 msgid "Unit Price"
-msgstr ""
+msgstr "Preu unitari"
 
 #. module: stock_reserve
 #: field:stock.reservation,product_uom:0
 msgid "Unit of Measure"
-msgstr ""
+msgstr "Unitat de mesura"
 
 #. module: stock_reserve
 #: field:stock.reservation,date_validity:0
