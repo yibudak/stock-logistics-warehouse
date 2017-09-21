@@ -18,140 +18,140 @@ msgstr ""
 #. module: stock_orderpoint_manual_procurement
 #: view:make.procurement.orderpoint:stock_orderpoint_manual_procurement.view_make_procurment_buffer_wizard
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: model:res.groups,name:stock_orderpoint_manual_procurement.group_change_orderpoint_procure_qty
 msgid "Change quantity in manual procurements from reordering rules"
-msgstr "Elle oluşturulan tedarik emirlerinde miktarı değiştirmek için tekrar sipariş kurallarını değiştirin."
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: view:stock.warehouse.orderpoint:stock_orderpoint_manual_procurement.view_warehouse_orderpoint_tree
 msgid "Create Procurement"
-msgstr "Tedarik Emri oluştur"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint,create_uid:0
 #: field:make.procurement.orderpoint.item,create_uid:0
 msgid "Created by"
-msgstr "Oluşturan"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint,create_date:0
 #: field:make.procurement.orderpoint.item,create_date:0
 msgid "Created on"
-msgstr "Oluşturuldu"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint,display_name:0
 #: field:make.procurement.orderpoint.item,display_name:0
 msgid "Display Name"
-msgstr "Görünen İsim"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: view:make.procurement.orderpoint:stock_orderpoint_manual_procurement.view_make_procurment_buffer_wizard
 msgid "Execute"
-msgstr "Çalıştır"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint,id:0
 #: field:make.procurement.orderpoint.item,id:0
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: view:make.procurement.orderpoint:stock_orderpoint_manual_procurement.view_make_procurment_buffer_wizard
 #: field:make.procurement.orderpoint,item_ids:0
 msgid "Items"
-msgstr "Kalemler"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint,__last_update:0
 #: field:make.procurement.orderpoint.item,__last_update:0
 msgid "Last Modified on"
-msgstr "Son değişiklik"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint,write_uid:0
 #: field:make.procurement.orderpoint.item,write_uid:0
 msgid "Last Updated by"
-msgstr "Son güncelleyen"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint,write_date:0
 #: field:make.procurement.orderpoint.item,write_date:0
 msgid "Last Updated on"
-msgstr "Son güncelleme"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,location_id:0
 msgid "Location"
-msgstr "Konum"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: model:ir.model,name:stock_orderpoint_manual_procurement.model_make_procurement_orderpoint_item
 msgid "Make Procurements from Orderpoint Item"
-msgstr "Sipariş noktası kuralından tedarik emri oluştur"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: model:ir.model,name:stock_orderpoint_manual_procurement.model_make_procurement_orderpoint
 msgid "Make Procurements from Orderpoints"
-msgstr "Tekrar Sipariş kurallarından Tedarik emri oluştur"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: model:ir.model,name:stock_orderpoint_manual_procurement.model_stock_warehouse_orderpoint
 msgid "Minimum Inventory Rule"
-msgstr "Minimum Stok Kuralı"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,date_planned:0
 msgid "Planned Date"
-msgstr "Planlanan Tarih"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:stock.warehouse.orderpoint,procure_recommended_qty:0
 msgid "Procure recommendation"
-msgstr "Tedarik tavsiyesi"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: view:make.procurement.orderpoint:stock_orderpoint_manual_procurement.view_make_procurment_buffer_wizard
 msgid "Procurement Request"
-msgstr "Tedarik emri isteği"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: view:stock.warehouse.orderpoint:stock_orderpoint_manual_procurement.view_warehouse_orderpoint_tree
 msgid "Procurements"
-msgstr "Tedarik Emirleri"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,product_id:0
 msgid "Product"
-msgstr "Ürün"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,qty:0
 msgid "Quantity"
-msgstr "Miktar"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,orderpoint_id:0
 msgid "Reordering rule"
-msgstr "Tekrar Sipariş kuralı"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:stock.warehouse.orderpoint,procure_recommended_date:0
 msgid "Request Date"
-msgstr "İstek Tarihi"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: model:ir.actions.act_window,name:stock_orderpoint_manual_procurement.act_make_procurement_from_orderpoint
 msgid "Request Procurement"
-msgstr "Tedarik emri oluştur"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,uom_id:0
 msgid "Unit of Measure"
-msgstr "Ölçü birimi"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: view:make.procurement.orderpoint:stock_orderpoint_manual_procurement.view_make_procurment_buffer_wizard
@@ -159,23 +159,20 @@ msgid "Use this assistant to generate a procurement request for this\n"
 "                        stock buffer. According to the product configuration,\n"
 "                        this may trigger a draft purchase order, a manufacturing\n"
 "                        order or a transfer picking."
-msgstr "Bu yardımcı ekran sayesinde tedarik emri oluşturabilirsiniz.\n"
-"                        Ürün ayarlarınıza göre, bu tedarik emri,\n"
-"                        Bir taslak satınalma siparişi ya da üretim emri oluşturabilir.\n"
-"                        ya da bir iç transfere neden olabilir."
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,warehouse_id:0
 msgid "Warehouse"
-msgstr "Depo"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: field:make.procurement.orderpoint.item,wiz_id:0
 msgid "Wizard"
-msgstr "Sihirbaz"
+msgstr ""
 
 #. module: stock_orderpoint_manual_procurement
 #: view:make.procurement.orderpoint:stock_orderpoint_manual_procurement.view_make_procurment_buffer_wizard
 msgid "or"
-msgstr "ya da"
+msgstr ""
 

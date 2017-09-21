@@ -18,25 +18,25 @@ msgstr ""
 #. module: stock_operation_type_location
 #: field:stock.picking.type,allowed_dest_location_ids:0
 msgid "Allowed Destination Location"
-msgstr "Allowed Destination Location"
+msgstr ""
 
 #. module: stock_operation_type_location
 #: field:stock.picking.type,allowed_location_ids:0
 msgid "Allowed Source Location"
-msgstr "Allowed Source Location"
+msgstr ""
 
 #. module: stock_operation_type_location
 #: model:ir.model,name:stock_operation_type_location.model_stock_transfer_details
 msgid "Picking wizard"
-msgstr "Toplama sihirbazı"
+msgstr ""
 
 #. module: stock_operation_type_location
 #: model:ir.model,name:stock_operation_type_location.model_stock_move
 msgid "Stock Move"
-msgstr "Stok Hareketi"
+msgstr ""
 
 #. module: stock_operation_type_location
 #: model:ir.model,name:stock_operation_type_location.model_stock_picking_type
 msgid "The picking type determines the picking view"
-msgstr "Malzeme çekme türü malzeme çekme görünümü belirler"
+msgstr ""
 
