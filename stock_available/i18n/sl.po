@@ -3,13 +3,13 @@
 # * stock_available
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: stock-logistics-warehouse (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-28 01:03+0000\n"
-"PO-Revision-Date: 2016-04-27 15:31+0000\n"
+"POT-Creation-Date: 2017-10-20 00:49+0000\n"
+"PO-Revision-Date: 2017-09-22 15:10+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-stock-logistics-warehouse-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,11 @@ msgid ""
 "If empty, Quantity On Hand is used.\n"
 "Only the quantity fields have meaning for computing stock"
 msgstr "Izberite polje proizvoda, ki bo uporabljeno za izračun potenciala.\nČe prazno, se uporabi količina pri roki.\nLe polja količine imajo vpliv na obračun zalog"
+
+#. module: stock_available
+#: field:stock.config.settings,module_stock_available_lot_locked:0
+msgid "Exclude blocked lots/serial numbers"
+msgstr "Izvzemi blokirane lote/serijske številke"
 
 #. module: stock_available
 #: field:stock.config.settings,module_stock_available_sale:0
@@ -89,6 +94,14 @@ msgid ""
 "This will subtract incoming quantities from the quantities available to promise.\n"
 "This installs the module stock_available_immediately."
 msgstr "Prihajajoče količine odšteje od količin na voljo za obljubo.\nNamesti modul stock_available_immediately."
+
+#. module: stock_available
+#: help:stock.config.settings,module_stock_available_lot_locked:0
+msgid ""
+"This will subtract quantities from the blocked lots/serial numbers from the quantities available to promise.\n"
+"This installs the modules stock_available_lot_locked.\n"
+"If the module stock_lock_lot is not installed, this will installit too"
+msgstr "Količine iz blokiranih lotov/serijskih številk bodo odštete od količin, ki jih lahko obljubimo.\nNamesti modul stock_available_lot_locked.\nČe modul stock_lock_lot ni nameščen, bo namestilo tudi slednjega."
 
 #. module: stock_available
 #: help:stock.config.settings,module_stock_available_sale:0

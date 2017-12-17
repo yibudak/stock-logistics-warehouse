@@ -25,12 +25,13 @@ addon | version | summary
 --- | --- | ---
 [account_move_line_product](account_move_line_product/) | 8.0.1.0.0 | Account Move Line Product
 [account_move_line_stock_info](account_move_line_stock_info/) | 8.0.1.0.0 | Account Move Line Stock Move
-[business_product_location](business_product_location/) | 0.1 | Business Product Location
+[business_product_location](business_product_location/) | 8.0.1.0.0 | Business Product Location
 [partner_location_auto_create](partner_location_auto_create/) | 8.0.0.1.0 | Partner Location Auto Create
 [stock_account_change_product_valuation](stock_account_change_product_valuation/) | 8.0.1.0.0 | Adjusts valuation of the products and quants when the cost method or type of a product changes
 [stock_account_quant_merge](stock_account_quant_merge/) | 8.0.1.0.0 | Stock Account - Quant merge
 [stock_available](stock_available/) | 8.0.3.1.0 | Stock available to promise
 [stock_available_immediately](stock_available_immediately/) | 8.0.2.0.1 | Ignore planned receptions in quantity available to promise
+[stock_available_lot_locked](stock_available_lot_locked/) | 8.0.1.0.0 | Consider the blocked lots are not available to promise
 [stock_available_mrp](stock_available_mrp/) | 8.0.3.1.1 | Consider the production potential is available to promise
 [stock_available_sale](stock_available_sale/) | 8.0.3.0.0 | Quotations in quantity available to promise
 [stock_available_unreserved](stock_available_unreserved/) | 8.0.1.0.0 | Quantity of stock available for inmediate use
@@ -51,7 +52,7 @@ addon | version | summary
 [stock_orderpoint_uom](stock_orderpoint_uom/) | 8.0.1.0.0 | Allows to create procurement orders in the UoM indicated in the orderpoint
 [stock_product_location_sorted_by_qty](stock_product_location_sorted_by_qty/) | 8.0.1.0.0 | In the update wizard of quantities for a product, sort the stock location by quantity
 [stock_putaway_product](stock_putaway_product/) | 8.0.1.0.1 | Set a product location and put-away strategy per product
-[stock_quant_manual_assign](stock_quant_manual_assign/) | 8.0.1.1.0 | Stock - Manual assignment of quants
+[stock_quant_manual_assign](stock_quant_manual_assign/) | 8.0.1.2.1 | Stock - Manual assignment of quants
 [stock_quant_merge](stock_quant_merge/) | 8.0.1.0.0 | Stock - Quant merge
 [stock_quant_partner_info](stock_quant_partner_info/) | 8.0.1.1.0 | Stock - Quant partner info
 [stock_reserve](stock_reserve/) | 8.0.0.2.0 | Stock reservations on products
