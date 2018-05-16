@@ -3,11 +3,11 @@
      License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-    <record id="view_stock_request_tree" model="ir.ui.view">
-        <field name="name">stock.request.tree</field>
-        <field name="model">stock.request</field>
+    <record id="view_stock_request_kanban_tree" model="ir.ui.view">
+        <field name="name">stock.request.kanban.tree</field>
+        <field name="model">stock.request.kanban</field>
         <field name="arch" type="xml">
-            <tree string="Stock Requests" decoration-muted="state == 'cancel'" decoration-bf="message_needaction==True">
+            <tree string="Stock Requests" decoration-muted="active == 'false'" decoration-bf="message_needaction==True">
                 <field name="message_needaction" invisible="1"/>
                 <field name="name"/>
                 <field name="warehouse_id" groups="stock.group_stock_multi_locations"/>
@@ -17,20 +17,18 @@
                 <field name="product_uom_id"
                        options="{'no_open': True, 'no_create': True}" groups="product.group_uom"/>
                 <field name="product_uom_qty"/>
-                <field name="qty_in_progress" />
-                <field name="qty_done" />
-                <field name="state"/>
+                <field name="active" invisible="1"/>
             </tree>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="stock_request_search">
-        <field name="name">stock.request.search</field>
-        <field name="model">stock.request</field>
+    <record model="ir.ui.view" id="stock_request_kanban_search">
+        <field name="name">stock.request.kanban.search</field>
+        <field name="model">stock.request.kanban</field>
         <field name="arch" type="xml">
-            <search string="Stock Requests Search">
-                <field name="name" string="Stock Requests"/>
-                <field name="warehouse_id"/>
+            <search string="Stock Requests Kanban">
+                <field name="name" string="Stock Requests Kanban"/>
+                <field name="warehouse_id" groups="stock.group_stock_multi_locations"/>
                 <field name="location_id" groups="stock.group_stock_multi_locations"/>
                 <field name="company_id" groups="base.group_multi_company"/>
                 <field name="product_id"/>
@@ -43,54 +41,27 @@
         </field>
     </record>
 
-    <record id="view_stock_request_form" model="ir.ui.view">
-        <field name="name">stock.request.form</field>
-        <field name="model">stock.request</field>
+    <record id="view_stock_request_kanban_form" model="ir.ui.view">
+        <field name="name">stock.request.kanban.form</field>
+        <field name="model">stock.request.kanban</field>
         <field name="arch" type="xml">
             <form string="Stock Requests">
-                <header>
-                    <button name="action_confirm"
-                        string="Confirm" type="object"
-                        attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
-                    <button name="action_cancel" states="draft,open"
-                            type="object" string="Cancel"/>
-                    <button name="action_draft" states="cancel" type="object"
-                            string="Set to Draft"/>
-                    <button name="action_done"
-                        string="Done" type="object"
-                        attrs="{'invisible': [('state', 'not in', ['open'])]}"/>
-                    <field name="state" widget="statusbar"/>
-                </header>
+                <header/>
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <field name="picking_ids" invisible="1"/>
-                        <button type="object"
-                            name="action_view_transfer"
-                            class="oe_stat_button"
-                            icon="fa-truck"
-                            attrs="{'invisible': [('picking_count', '=', 0)]}"
-                                groups="stock.group_stock_user">
-                            <field name="picking_count" widget="statinfo"
-                                   string="Transfers"/>
-                        </button>
-                    </div>
+                    <div class="oe_button_box" name="button_box"/>
                     <div class="oe_title">
-                        <label string="Stock Request " />
+                        <label string="Stock Request Kanban" />
                         <h1>
                             <field name="name" readonly="1"/>
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="order_id" readonly="1" groups="stock_request.group_stock_request_order"/>
                             <field name="product_id"/>
-                            <field name="expected_date"/>
-                            <field name="picking_policy"/>
                         </group>
                         <group>
                             <field name="warehouse_id" widget="selection" groups="stock.group_stock_multi_locations"/>
-                            <field name="location_id" groups="stock.group_stock_multi_locations"
-                                   domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]"/>
+                            <field name="location_id" groups="stock.group_stock_multi_locations"/>
                             <field name="route_id"
                                    options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
                             <field name="route_ids" invisible="1"/>
@@ -108,8 +79,6 @@
                                        options="{'no_open': True, 'no_create': True}"
                                        groups="product.group_uom"/>
                             </div>
-                            <field name="qty_in_progress" />
-                            <field name="qty_done" />
                         </group>
                     </group>
                 </sheet>
@@ -122,17 +91,53 @@
         </field>
     </record>
 
-    <record id="action_stock_request_form" model="ir.actions.act_window">
-        <field name="name">Stock Requests</field>
-        <field name="res_model">stock.request</field>
+    <!-- Partner Kanban View -->
+        <record model="ir.ui.view" id="stock_request_kanban_kanban_view">
+            <field name="name">stock.request.kanban.kanban</field>
+            <field name="model">stock.request.kanban</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="display_name"/>
+                    <field name="warehouse_id"/>
+                    <field name="location_id"/>
+                    <field name="product_qty"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_res_partner_kanban">
+
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('product.product', 'image_small', record.product_id.raw_value)"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title"><field name="display_name"/></strong>
+                                    <div class="o_kanban_tags_section"/>
+                                    <ul>
+                                        <li t-if="record.product_id.raw_value"><field name="product_id"/></li>
+                                        <li t-if="record.warehouse_id.raw_value" groups="stock.group_stock_multi_locations"><field name="warehouse_id"/></li>
+                                        <li t-if="record.location_id.raw_value" groups="stock.group_stock_multi_locations"><field name="location_id"/></li>
+                                        <li t-if="record.product_qty"><field name="product_qty"/> <field name="product_uom_id"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    <record id="stock_request_kanban_action" model="ir.actions.act_window">
+        <field name="name">Stock Request Kanbans</field>
+        <field name="res_model">stock.request.kanban</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_stock_request_tree"/>
-        <field name="search_view_id" ref="stock_request_search" />
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
           <p class="oe_view_nocontent_create">
-            Click to add a Stock Request.
+            Click to add a Stock Request Kanban.
           </p>
         </field>
     </record>
