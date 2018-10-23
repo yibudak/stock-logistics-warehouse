@@ -1,12 +1,5 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * stock_inventory_preparation_filter
-#
-# Translators:
-msgid ""
-msgstr ""
-"Project-Id-Version: stock-logistics-warehouse (8.0)\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-30 03:45+0000\n"
 "PO-Revision-Date: 2016-12-30 18:44+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
@@ -18,16 +11,17 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+
 #. module: stock_inventory_preparation_filter
 #: view:stock.inventory:stock_inventory_preparation_filter.stock_inventory_form
 #: field:stock.inventory,empty_line_ids:0
 msgid "Capture Lines"
-msgstr ""
+msgstr "Capture Lines"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory,categ_ids:0
 msgid "Categories"
-msgstr ""
+msgstr "Kategoriler"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,create_uid:0
@@ -48,7 +42,7 @@ msgstr "Görünen İsim"
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:60
 #, python-format
 msgid "Empty list"
-msgstr ""
+msgstr "Boş Liste"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,id:0
@@ -59,12 +53,12 @@ msgstr "ID"
 #: model:ir.model,name:stock_inventory_preparation_filter.model_stock_inventory
 #: field:stock.inventory.line.empty,inventory_id:0
 msgid "Inventory"
-msgstr ""
+msgstr "Envanter"
 
 #. module: stock_inventory_preparation_filter
 #: view:stock.inventory:stock_inventory_preparation_filter.stock_inventory_form
 msgid "Inventory Details"
-msgstr ""
+msgstr "Envanter Detayları"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,__last_update:0
@@ -84,42 +78,43 @@ msgstr "Son güncelleme"
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory,lot_ids:0
 msgid "Lots"
-msgstr ""
+msgstr "Seriler"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,product_code:0
 msgid "Product Code"
-msgstr ""
+msgstr "Ürün Kodu"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory,product_ids:0
 msgid "Products"
-msgstr ""
+msgstr "Ürünler"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,product_qty:0
 msgid "Quantity"
-msgstr ""
+msgstr "Miktar"
 
 #. module: stock_inventory_preparation_filter
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:55
 #, python-format
 msgid "Selected Categories"
-msgstr ""
+msgstr "Seçili Kategoriler"
 
 #. module: stock_inventory_preparation_filter
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:59
 #, python-format
 msgid "Selected Lots"
-msgstr ""
+msgstr "Seçili Seriler"
 
 #. module: stock_inventory_preparation_filter
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:56
 #, python-format
 msgid "Selected Products"
-msgstr ""
+msgstr "Seçili Ürünler"
 
 #. module: stock_inventory_preparation_filter
 #: view:stock.inventory:stock_inventory_preparation_filter.stock_inventory_form
 msgid "{'invisible':[('state','=','draft')]}"
-msgstr ""
+msgstr "{'invisible':[('state','=','draft')]}"
+

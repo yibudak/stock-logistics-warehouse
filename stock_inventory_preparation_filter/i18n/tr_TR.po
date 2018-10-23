@@ -48,48 +48,48 @@ msgstr "Görünen ad"
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:60
 #, python-format
 msgid "Empty list"
-msgstr ""
+msgstr "Boş Liste"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,id:0
 msgid "ID"
-msgstr "Kimlik"
+msgstr "ID"
 
 #. module: stock_inventory_preparation_filter
 #: model:ir.model,name:stock_inventory_preparation_filter.model_stock_inventory
 #: field:stock.inventory.line.empty,inventory_id:0
 msgid "Inventory"
-msgstr ""
+msgstr "Envanter"
 
 #. module: stock_inventory_preparation_filter
 #: view:stock.inventory:stock_inventory_preparation_filter.stock_inventory_form
 msgid "Inventory Details"
-msgstr ""
+msgstr "Envanter Detayları"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,__last_update:0
 msgid "Last Modified on"
-msgstr "En son güncelleme tarihi"
+msgstr "Son güncelleme"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,write_uid:0
 msgid "Last Updated by"
-msgstr "En son güncelleyen "
+msgstr "son güncelleyen"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,write_date:0
 msgid "Last Updated on"
-msgstr "En son güncelleme tarihi"
+msgstr "son güncelleme"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory,lot_ids:0
 msgid "Lots"
-msgstr ""
+msgstr "Seriler"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory.line.empty,product_code:0
 msgid "Product Code"
-msgstr ""
+msgstr "Ürün Kodu"
 
 #. module: stock_inventory_preparation_filter
 #: field:stock.inventory,product_ids:0
@@ -105,19 +105,19 @@ msgstr "Miktar"
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:55
 #, python-format
 msgid "Selected Categories"
-msgstr ""
+msgstr "Seçili Kategoriler"
 
 #. module: stock_inventory_preparation_filter
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:59
 #, python-format
 msgid "Selected Lots"
-msgstr ""
+msgstr "Seçili Seriler"
 
 #. module: stock_inventory_preparation_filter
 #: code:addons/stock_inventory_preparation_filter/models/stock_inventory.py:56
 #, python-format
 msgid "Selected Products"
-msgstr ""
+msgstr "Seçili Ürünler"
 
 #. module: stock_inventory_preparation_filter
 #: view:stock.inventory:stock_inventory_preparation_filter.stock_inventory_form
