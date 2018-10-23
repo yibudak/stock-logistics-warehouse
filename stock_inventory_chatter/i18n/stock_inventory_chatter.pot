@@ -1,0 +1,85 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_inventory_chatter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_inventory_chatter
+#: help:stock.inventory,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: field:stock.inventory,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: help:stock.inventory,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: help:stock.inventory,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: model:ir.model,name:stock_inventory_chatter.model_stock_inventory
+msgid "Inventory"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: model:mail.message.subtype,name:stock_inventory_chatter.mt_inventory_canceled
+msgid "Inventory Canceled"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: model:mail.message.subtype,name:stock_inventory_chatter.mt_inventory_confirmed
+msgid "Inventory Confirmed"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: model:mail.message.subtype,name:stock_inventory_chatter.mt_inventory_done
+msgid "Inventory Done"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: field:stock.inventory,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: field:stock.inventory,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: field:stock.inventory,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: help:stock.inventory,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: field:stock.inventory,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: stock_inventory_chatter
+#: field:stock.inventory,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
