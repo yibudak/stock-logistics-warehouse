@@ -18,10 +18,10 @@ msgstr ""
 #. module: stock_inventory_exclude_sublocation
 #: field:stock.inventory,exclude_sublocation:0
 msgid "Exclude Sublocations"
-msgstr ""
+msgstr "Alt Konumları Hariç Tut"
 
 #. module: stock_inventory_exclude_sublocation
 #: model:ir.model,name:stock_inventory_exclude_sublocation.model_stock_inventory
 msgid "Inventory"
-msgstr ""
+msgstr "Envanter"
 
