@@ -23,7 +23,8 @@
             <field name="model">stock.warehouse.orderpoint</field>
             <field name="inherit_id" ref="stock.view_warehouse_orderpoint_form" />
             <field name="arch" type="xml">
-                <group string="Rules" position="after">
+                <data>
+                   <group string="Rules" position="after">
                     <group string="Stock Info">
                         <field name="product_location_qty" />
                         <field name="incoming_location_qty" />
@@ -31,6 +32,9 @@
                         <field name="virtual_location_qty" />
                     </group>
                 </group>
+
+
+                </data>
             </field>
         </record>
 
