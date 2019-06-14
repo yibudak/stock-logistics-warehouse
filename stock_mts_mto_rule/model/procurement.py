@@ -62,6 +62,8 @@ class ProcurementOrder(models.Model):
             'product_uos_qty': uos_qty,
             'rule_id': rule.id,
             'mts_mto_procurement_id': proc.id,
+            'warehouse_id': rule.warehouse_id.id,
+            'group_id': proc.group_id.id,
         }
 
     @api.model
