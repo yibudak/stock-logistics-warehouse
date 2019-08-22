@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * stock_mts_mto_rule
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,75 +10,77 @@ msgstr ""
 "POT-Creation-Date: 2017-01-04 11:45+0000\n"
 "PO-Revision-Date: 2017-01-05 11:44+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Turkish (Turkey) (http://www.transifex.com/oca/OCA-stock-logistics-warehouse-8-0/language/tr_TR/)\n"
+"Language-Team: Turkish (Turkey) (http://www.transifex.com/oca/OCA-stock-"
+"logistics-warehouse-8-0/language/tr_TR/)\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: tr_TR\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: stock_mts_mto_rule
 #: code:addons/stock_mts_mto_rule/model/warehouse.py:53
 #, python-format
 msgid "Can't find MTO Rule on the warehouse"
-msgstr ""
+msgstr "Depoda Siparişe Üretim kuralı bulunamadı"
 
 #. module: stock_mts_mto_rule
 #: code:addons/stock_mts_mto_rule/model/warehouse.py:60
 #, python-format
 msgid "Can't find MTS Rule on the warehouse"
-msgstr ""
+msgstr "Stoğa Üretim kuralı bulunamadı"
 
 #. module: stock_mts_mto_rule
 #: code:addons/stock_mts_mto_rule/model/warehouse.py:49
 #, python-format
 msgid "Can't find any generic MTS+MTO route."
-msgstr ""
+msgstr "Hiç genel Stoğa+Siparişe Üretim kuralı bulunamadı"
 
 #. module: stock_mts_mto_rule
 #: code:addons/stock_mts_mto_rule/model/rule.py:36
 #, python-format
 msgid "Choose between MTS and MTO"
-msgstr ""
+msgstr "Stoğa veya Siparişe Üretim Kuralı seçin"
 
 #. module: stock_mts_mto_rule
 #: help:stock.warehouse,mto_mts_management:0
 msgid ""
-"If this new route is selected on product form view, a purchase order will be"
-" created only if the virtual stock is less than 0 else, the product will be "
+"If this new route is selected on product form view, a purchase order will be "
+"created only if the virtual stock is less than 0 else, the product will be "
 "taken from stocks"
-msgstr ""
+msgstr "Eğer ürün form görünümünde bu kural seçilmiş sanal stok
+sıfırın altında ise çalıştırılır, aksi halde ürün stoktan alınır."
 
 #. module: stock_mts_mto_rule
 #: field:procurement.rule,mto_rule_id:0
 msgid "MTO Rule"
-msgstr ""
+msgstr "Siparişe Üretim Kuralı"
 
 #. module: stock_mts_mto_rule
 #: field:stock.warehouse,mts_mto_rule_id:0
 msgid "MTO+MTS rule"
-msgstr ""
+msgstr "Siparişe+Stoğa Üretim Kuralı"
 
 #. module: stock_mts_mto_rule
 #: field:procurement.rule,mts_rule_id:0
 msgid "MTS Rule"
-msgstr ""
+msgstr "Stoğa Üretim Kuralı"
 
 #. module: stock_mts_mto_rule
 #: code:addons/stock_mts_mto_rule/model/warehouse.py:63
 #, python-format
 msgid "MTS+MTO"
-msgstr ""
+msgstr "Stoğa+Siparişe Üretim"
 
 #. module: stock_mts_mto_rule
 #: model:stock.location.route,name:stock_mts_mto_rule.route_mto_mts
 msgid "Make To Order + Make To Stock"
-msgstr ""
+msgstr "Stoğa Üretim + Siparişe Üretim"
 
 #. module: stock_mts_mto_rule
 #: field:procurement.order,mts_mto_procurement_id:0
 msgid "Mto+Mts Procurement"
-msgstr ""
+msgstr "Siparişe + Stoğa üretim Tedarik"
 
 #. module: stock_mts_mto_rule
 #: model:ir.model,name:stock_mts_mto_rule.model_procurement_order
@@ -88,17 +90,17 @@ msgstr "Satın alma"
 #. module: stock_mts_mto_rule
 #: model:ir.model,name:stock_mts_mto_rule.model_procurement_rule
 msgid "Procurement Rule"
-msgstr ""
+msgstr "Tedarik Kuralı"
 
 #. module: stock_mts_mto_rule
 #: field:procurement.order,mts_mto_procurement_ids:0
 msgid "Procurements"
-msgstr ""
+msgstr "Tedarikler"
 
 #. module: stock_mts_mto_rule
 #: field:stock.warehouse,mto_mts_management:0
 msgid "Use MTO+MTS rules"
-msgstr ""
+msgstr "Siparişe + Stoğa Üretim Kuralları Kullan"
 
 #. module: stock_mts_mto_rule
 #: model:ir.model,name:stock_mts_mto_rule.model_stock_warehouse
