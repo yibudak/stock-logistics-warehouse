@@ -60,7 +60,7 @@ class ProcurementOrder(models.Model):
             'origin': origin,
             'product_qty': qty,
             'product_uos_qty': uos_qty,
-            'rule_id': rule.id,
+            'rule_id': rule and rule.id,
             'mts_mto_procurement_id': proc.id,
         }
 

@@ -9,6 +9,8 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='delivery_steps']" position="after">
           <field name="mto_mts_management" />
+          <field name="mto_pull_id" />
+          
         </xpath>
       </field>
     </record>
