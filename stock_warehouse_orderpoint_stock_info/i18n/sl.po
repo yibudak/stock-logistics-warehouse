@@ -3,15 +3,14 @@
 # * stock_warehouse_orderpoint_stock_info
 #
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-18 03:44+0000\n"
-"PO-Revision-Date: 2016-11-18 03:44+0000\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>, 2016\n"
+"POT-Creation-Date: 2018-01-16 14:36+0000\n"
+"PO-Revision-Date: 2018-01-16 14:36+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -21,14 +20,16 @@ msgstr ""
 "%100==4 ? 2 : 3);\n"
 
 #. module: stock_warehouse_orderpoint_stock_info
-#: field:stock.warehouse.orderpoint,virtual_location_qty:0
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint__virtual_location_qty
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint_template__virtual_location_qty
 msgid "Forecast On Location"
-msgstr "Napoved za lokacijo"
+msgstr ""
 
 #. module: stock_warehouse_orderpoint_stock_info
-#: field:stock.warehouse.orderpoint,incoming_location_qty:0
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint__incoming_location_qty
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint_template__incoming_location_qty
 msgid "Incoming On Location"
-msgstr "Prihodi na lokacijo"
+msgstr ""
 
 #. module: stock_warehouse_orderpoint_stock_info
 #: model:ir.model,name:stock_warehouse_orderpoint_stock_info.model_stock_warehouse_orderpoint
@@ -36,42 +37,31 @@ msgid "Minimum Inventory Rule"
 msgstr "Pravilo minimalne zaloge"
 
 #. module: stock_warehouse_orderpoint_stock_info
-#: field:stock.warehouse.orderpoint,outgoing_location_qty:0
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint__outgoing_location_qty
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint_template__outgoing_location_qty
 msgid "Outgoing On Location"
-msgstr "Izhodi iz lokacije"
+msgstr ""
 
 #. module: stock_warehouse_orderpoint_stock_info
-#: view:stock.warehouse.orderpoint:stock_warehouse_orderpoint_stock_info.stock_warehouse_orderpoint_search_view
+#: model_terms:ir.ui.view,arch_db:stock_warehouse_orderpoint_stock_info.warehouse_orderpoint_search
 msgid "Product"
 msgstr "Proizvod"
 
 #. module: stock_warehouse_orderpoint_stock_info
-#: view:stock.warehouse.orderpoint:stock_warehouse_orderpoint_stock_info.stock_warehouse_orderpoint_search_view
-#: field:stock.warehouse.orderpoint,product_category:0
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint__product_category
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint_template__product_category
+#: model_terms:ir.ui.view,arch_db:stock_warehouse_orderpoint_stock_info.warehouse_orderpoint_search
 msgid "Product Category"
 msgstr "Kategorija proizvoda"
 
 #. module: stock_warehouse_orderpoint_stock_info
-#: field:stock.warehouse.orderpoint,product_location_qty:0
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint__product_location_qty
+#: model:ir.model.fields,field_description:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint_template__product_location_qty
 msgid "Quantity On Location"
-msgstr "Količina na lokaciji"
+msgstr ""
 
 #. module: stock_warehouse_orderpoint_stock_info
-#: view:stock.warehouse.orderpoint:stock_warehouse_orderpoint_stock_info.stock_warehouse_orderpoint_form_view
-msgid "Rules"
-msgstr "Pravila"
-
-#. module: stock_warehouse_orderpoint_stock_info
-#: help:stock.warehouse.orderpoint,product_category:0
+#: model:ir.model.fields,help:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint__product_category
+#: model:ir.model.fields,help:stock_warehouse_orderpoint_stock_info.field_stock_warehouse_orderpoint_template__product_category
 msgid "Select category for the current product"
-msgstr "Izbira kategorije trenutnega proizvoda"
-
-#. module: stock_warehouse_orderpoint_stock_info
-#: view:stock.warehouse.orderpoint:stock_warehouse_orderpoint_stock_info.stock_warehouse_orderpoint_form_view
-msgid "Stock Info"
-msgstr "Podatki o zalogi"
-
-#. module: stock_warehouse_orderpoint_stock_info
-#: view:stock.warehouse.orderpoint:stock_warehouse_orderpoint_stock_info.stock_warehouse_orderpoint_search_view
-msgid "Warehouse"
-msgstr "Skladišče"
+msgstr ""
