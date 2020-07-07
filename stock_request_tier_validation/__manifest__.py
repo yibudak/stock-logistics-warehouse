@@ -4,8 +4,8 @@
     "name": "Stock Request Tier Validation",
     "summary": "Extends the functionality of Stock Requests to "
                "support a tier validation process.",
-    "version": "12.0.1.1.0",
-    "category": "Warehouse Management",
+    "version": "12.0.1.2.0",
+    "category": "Warehouse",
     "website": "https://github.com/OCA/stock-logistics-warehouse",
     "author": "Eficent, Odoo Community Association (OCA)",
     "license": "AGPL-3",

@@ -4,12 +4,12 @@
 {
     "name": "Stock Requests Direction",
     "summary": "From or to your warehouse?",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.2",
     "license": "LGPL-3",
     "website": "https://github.com/OCA/stock-logistics-warehouse",
     "author": "Open Source Integrators, "
               "Odoo Community Association (OCA)",
-    "category": "Warehouse Management",
+    "category": "Warehouse",
     "depends": [
         "stock_request",
     ],
