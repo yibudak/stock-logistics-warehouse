@@ -23,12 +23,12 @@ class StockRule(models.Model):
                     msg = _('No MTS or MTO rule configured on procurement '
                             'rule: %s!') % (rule.name, )
                     raise ValidationError(msg)
-                if (rule.mts_rule_id.location_src_id.id !=
-                        rule.mto_rule_id.location_src_id.id):
-                    msg = _('Inconsistency between the source locations of '
-                            'the mts and mto rules linked to the procurement '
-                            'rule: %s! It should be the same.') % (rule.name,)
-                    raise ValidationError(msg)
+                # if (rule.mts_rule_id.location_src_id.id !=
+                #         rule.mto_rule_id.location_src_id.id):
+                #     msg = _('Inconsistency between the source locations of '
+                #             'the mts and mto rules linked to the procurement '
+                #             'rule: %s! It should be the same.') % (rule.name,)
+                #     raise ValidationError(msg)
 
     def _get_qty_available_for_mto_qty(self, product, product_location, product_uom):
         virtual_available = product_location.virtual_available
