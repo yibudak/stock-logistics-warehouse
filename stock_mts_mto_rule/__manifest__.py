@@ -13,6 +13,7 @@
     'installable': True,
     'depends': [
         'stock',
+        'stock_available_unreserved',
     ],
     'data': [
         'data/stock_data.xml',
