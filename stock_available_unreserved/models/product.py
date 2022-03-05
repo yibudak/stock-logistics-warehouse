@@ -61,62 +61,111 @@ class ProductProduct(models.Model):
     qty_available_not_res = fields.Float(
         string='Qty Available Not Reserved',
         digits=UNIT,
-        compute='_compute_qty_available_not_reserved',
+        compute='_compute_quantities',
         search="_search_quantity_unreserved",
     )
 
-    @api.multi
-    def _prepare_domain_available_not_reserved(self):
-        domain_quant = [
-            ('product_id', 'in', self.ids),
-        ]
-        domain_quant_locations = self._get_domain_locations()[0]
-        domain_quant.extend(domain_quant_locations)
-        return domain_quant
 
-    @api.multi
-    def _compute_product_available_not_res_dict(self):
+    @api.depends('stock_move_ids.product_qty', 'stock_move_ids.state', 'stock_quant_ids.unreserved_quantity')
+    def _compute_quantities(self):
+        res = self._compute_quantities_dict(self._context.get('lot_id'), self._context.get('owner_id'),
+                                            self._context.get('package_id'), self._context.get('from_date'),
+                                            self._context.get('to_date'))
+        for product in self:
+            product.qty_available = res[product.id]['qty_available']
+            product.incoming_qty = res[product.id]['incoming_qty']
+            product.outgoing_qty = res[product.id]['outgoing_qty']
+            product.virtual_available = res[product.id]['virtual_available']
+            product.qty_available_not_res = res[product.id]['unreserved_quantity']
 
-        res = {}
+    def _compute_quantities_dict(self, lot_id, owner_id, package_id, from_date=False, to_date=False):
+        domain_quant_loc, domain_move_in_loc, domain_move_out_loc = self._get_domain_locations()
+        domain_quant = [('product_id', 'in', self.ids)] + domain_quant_loc
+        domain_non_reserved_quant = [('contains_unreserved', '=', True)] + domain_quant
+        dates_in_the_past = False
+        # only to_date as to_date will correspond to qty_available
+        to_date = fields.Datetime.to_datetime(to_date)
+        if to_date and to_date < fields.Datetime.now():
+            dates_in_the_past = True
 
-        domain_quant = self._prepare_domain_available_not_reserved()
-        ctx = {'lang': False, 'has_unreserved_quantity': True}
-        quants = self.env['stock.quant'].with_context(ctx).read_group(
-            domain_quant,
-            ['product_id', 'location_id', 'quantity', 'reserved_quantity'],
-            ['product_id', 'location_id'],
-            lazy=False)
-        product_sums = {}
-        for quant in quants:
-            # create a dictionary with the total value per products
-            product_sums.setdefault(quant['product_id'][0], 0.)
-            product_sums[quant['product_id'][0]] += (
-                quant['quantity'] - quant['reserved_quantity']
-            )
-        for product in self.with_context(prefetch_fields=False, lang=''):
-            available_not_res = float_round(
-                product_sums.get(product.id, 0.0),
-                precision_rounding=product.uom_id.rounding
-            )
-            res[product.id] = {
-                'qty_available_not_res': available_not_res,
-            }
-        return res
+        domain_move_in = [('product_id', 'in', self.ids)] + domain_move_in_loc
+        domain_move_out = [('product_id', 'in', self.ids)] + domain_move_out_loc
+        if lot_id is not None:
+            domain_quant += [('lot_id', '=', lot_id)]
+        if owner_id is not None:
+            domain_quant += [('owner_id', '=', owner_id)]
+            domain_move_in += [('restrict_partner_id', '=', owner_id)]
+            domain_move_out += [('restrict_partner_id', '=', owner_id)]
+        if package_id is not None:
+            domain_quant += [('package_id', '=', package_id)]
+        if dates_in_the_past:
+            domain_move_in_done = list(domain_move_in)
+            domain_move_out_done = list(domain_move_out)
+        if from_date:
+            domain_move_in += [('date', '>=', from_date)]
+            domain_move_out += [('date', '>=', from_date)]
+        if to_date:
+            domain_move_in += [('date', '<=', to_date)]
+            domain_move_out += [('date', '<=', to_date)]
 
-    @api.multi
-    @api.depends('stock_move_ids.product_qty', 'stock_move_ids.state')
-    def _compute_qty_available_not_reserved(self):
-        res = self._compute_product_available_not_res_dict()
-        for prod in self:
-            qty = res[prod.id]['qty_available_not_res']
-            prod.qty_available_not_res = qty
+        Move = self.env['stock.move']
+        Quant = self.env['stock.quant']
+        domain_move_in_todo = [('state', 'in',
+                                ('waiting', 'confirmed', 'assigned', 'partially_available'))] + domain_move_in
+        domain_move_out_todo = [('state', 'in',
+                                 ('waiting', 'confirmed', 'assigned', 'partially_available'))] + domain_move_out
+        moves_in_res = dict((item['product_id'][0], item['product_qty']) for item in
+                            Move.read_group(domain_move_in_todo, ['product_id', 'product_qty'], ['product_id'],
+                                            orderby='id'))
+        moves_out_res = dict((item['product_id'][0], item['product_qty']) for item in
+                             Move.read_group(domain_move_out_todo, ['product_id', 'product_qty'], ['product_id'],
+                                             orderby='id'))
+        quants_res = dict((item['product_id'][0], item['quantity']) for item in
+                          Quant.read_group(domain_quant, ['product_id', 'quantity'], ['product_id'], orderby='id'))
+        quants_unres_res = dict((item['product_id'][0], item['unreserved_quantity']) for item in
+                                Quant.read_group(domain_non_reserved_quant, ['product_id', 'unreserved_quantity'],
+                                                 ['product_id'], orderby='id'))
+
+        if dates_in_the_past:
+            # Calculate the moves that were done before now to calculate back in time (as most questions will be recent ones)
+            domain_move_in_done = [('state', '=', 'done'), ('date', '>', to_date)] + domain_move_in_done
+            domain_move_out_done = [('state', '=', 'done'), ('date', '>', to_date)] + domain_move_out_done
+            moves_in_res_past = dict((item['product_id'][0], item['product_qty']) for item in
+                                     Move.read_group(domain_move_in_done, ['product_id', 'product_qty'], ['product_id'],
+                                                     orderby='id'))
+            moves_out_res_past = dict((item['product_id'][0], item['product_qty']) for item in
+                                      Move.read_group(domain_move_out_done, ['product_id', 'product_qty'],
+                                                      ['product_id'], orderby='id'))
+
+        res = dict()
+        for product in self.with_context(prefetch_fields=False):
+            product_id = product.id
+            rounding = product.uom_id.rounding
+            res[product_id] = {}
+            if dates_in_the_past:
+                qty_available = quants_res.get(product_id, 0.0) - moves_in_res_past.get(product_id,
+                                                                                        0.0) + moves_out_res_past.get(
+                    product_id, 0.0)
+            else:
+                qty_available = quants_res.get(product_id, 0.0)
+            res[product_id]['qty_available'] = float_round(qty_available, precision_rounding=rounding)
+            res[product_id]['incoming_qty'] = float_round(moves_in_res.get(product_id, 0.0),
+                                                          precision_rounding=rounding)
+            res[product_id]['outgoing_qty'] = float_round(moves_out_res.get(product_id, 0.0),
+                                                          precision_rounding=rounding)
+            res[product_id]['virtual_available'] = float_round(
+                qty_available + res[product_id]['incoming_qty'] - res[product_id]['outgoing_qty'],
+                precision_rounding=rounding)
+            res[product_id]['unreserved_quantity'] = float_round(quants_unres_res.get(product_id, 0.0),
+                                                                 precision_rounding=rounding)
+
         return res
 
     def _get_domain_locations(self):
         rec = super(ProductProduct, self)._get_domain_locations()
         if self.env.context.get('has_unreserved_quantity', False):
             domain_quant = [
-                ('unreserved_quantity', '>', 0.0),
+                ('contains_unreserved', '=', True),
             ]
             rec += (domain_quant,)
         return rec
@@ -127,7 +176,7 @@ class ProductProduct(models.Model):
         if not isinstance(value, (float, int)):
             raise UserError(_('Invalid domain right operand %s') % value)
         if value and operator == '>' and not (
-                {'from_date', 'to_date'} & set(self.env.context.keys())):
+            {'from_date', 'to_date'} & set(self.env.context.keys())):
             product_ids = self.with_context(
                 has_unreserved_quantity=True)._search_qty_available_new(
                 operator, value, self.env.context.get('lot_id'),

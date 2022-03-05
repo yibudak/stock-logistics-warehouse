@@ -31,8 +31,8 @@ class StockRule(models.Model):
                 #     raise ValidationError(msg)
 
     def _get_qty_available_for_mto_qty(self, product, product_location, product_uom):
-        virtual_available = product_location.virtual_available
-        return product.uom_id._compute_quantity(virtual_available, product_uom)
+        qty_available_not_res = product_location.qty_available_not_res
+        return product.uom_id._compute_quantity(qty_available_not_res, product_uom)
 
     @api.multi
     def get_mto_qty_to_order(self, product, product_qty, product_uom, values):
