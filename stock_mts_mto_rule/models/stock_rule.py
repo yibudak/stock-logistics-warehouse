@@ -14,6 +14,10 @@ class StockRule(models.Model):
         'stock.rule', string="MTS Rule")
     mto_rule_id = fields.Many2one(
         'stock.rule', string="MTO Rule")
+    do_not_split_percentage = fields.Float('Do not Split Percentage',
+                                           help="If MTS quantity/Total Quantity rate is less than this percentage "
+                                                "fully run MTS rule else split procurement into two moves",
+                                           default=20.0)
 
     @api.constrains('action', 'mts_rule_id', 'mto_rule_id')
     def _check_mts_mto_rule(self):
@@ -43,6 +47,7 @@ class StockRule(models.Model):
         product_location = product.with_context(location=src_location_id)
         qty_available = self._get_qty_available_for_mto_qty(
             product, product_location, product_uom)
+
         if float_compare(qty_available, 0.0, precision_digits=precision) > 0:
             if float_compare(qty_available, product_qty,
                              precision_digits=precision) >= 0:
@@ -57,6 +62,10 @@ class StockRule(models.Model):
             .precision_get('Product Unit of Measure')
         needed_qty = self.get_mto_qty_to_order(product_id, product_qty,
                                                product_uom, values)
+
+        if ((needed_qty / product_qty) * 100) < (self.do_not_split_percentage or 0.0):
+            needed_qty = 0.0
+
         if float_is_zero(needed_qty, precision_digits=precision):
             getattr(self.mts_rule_id, '_run_%s' % self.mts_rule_id.action)(
                 product_id, product_qty, product_uom, location_id, name,
