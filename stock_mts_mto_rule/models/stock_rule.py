@@ -63,8 +63,8 @@ class StockRule(models.Model):
         needed_qty = self.get_mto_qty_to_order(product_id, product_qty,
                                                product_uom, values)
 
-        if ((needed_qty / product_qty) * 100) < (self.do_not_split_percentage or 0.0):
-            needed_qty = 0.0
+        if (((product_qty - needed_qty) / product_qty) * 100) < (self.do_not_split_percentage or 0.0):
+            needed_qty = product_qty
 
         if float_is_zero(needed_qty, precision_digits=precision):
             getattr(self.mts_rule_id, '_run_%s' % self.mts_rule_id.action)(
