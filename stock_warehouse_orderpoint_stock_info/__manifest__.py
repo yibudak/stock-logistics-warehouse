@@ -10,7 +10,7 @@
     "name": "Stock Warehouse Orderpoint Stock Info",
     "version": "12.0.1.0.0",
     "depends": [
-        "stock",
+        "stock", 'web_widget_uom_view_precision',
     ],
     "author": "OdooMRP team, "
               "AvanzOSC, "

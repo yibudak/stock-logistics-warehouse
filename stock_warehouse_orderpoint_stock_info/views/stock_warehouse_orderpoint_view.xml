@@ -9,10 +9,11 @@
                     <field name="product_category"/>
                 </field>
                 <field name="product_max_qty" position="after">
-                    <field name="product_location_qty" />
-                    <field name="incoming_location_qty" />
-                    <field name="outgoing_location_qty" />
-                    <field name="virtual_location_qty" />
+                    <field name="product_location_qty" widget="uom" options="{'uom_field': 'product_uom'}"/>
+                    <field name="incoming_location_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
+                    <field name="outgoing_location_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
+                    <field name="virtual_location_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
+                    <field name="draft_purchase_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
                 </field>
             </field>
         </record>
@@ -23,10 +24,11 @@
             <field name="inherit_id" ref="stock.view_warehouse_orderpoint_form" />
             <field name="arch" type="xml">
                 <field name="qty_multiple" position="after">
-                    <field name="product_location_qty" />
-                    <field name="incoming_location_qty" />
-                    <field name="outgoing_location_qty" />
-                    <field name="virtual_location_qty" />
+                    <field name="product_location_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
+                    <field name="incoming_location_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
+                    <field name="outgoing_location_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
+                    <field name="virtual_location_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
+                    <field name="draft_purchase_qty" widget="uom" options="{'uom_field': 'product_uom'}" />
                 </field>
             </field>
         </record>

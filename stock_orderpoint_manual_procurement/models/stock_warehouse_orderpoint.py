@@ -54,8 +54,10 @@ class StockWarehouseOrderpoint(models.Model):
         op_qtys = self._quantity_in_progress()
         for op in self:
             qty = 0.0
+            location = op.location_id
+            location |= location.included_location_ids
             virtual_qty = op.with_context(
-                location=op.location_id.id).product_id.virtual_available
+                location=location.ids).product_id.virtual_available
             if float_compare(virtual_qty, op.product_min_qty,
                              precision_rounding=op.product_uom.rounding) < 0:
                 qty = op._get_procure_recommended_qty(virtual_qty, op_qtys)

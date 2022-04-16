@@ -36,6 +36,20 @@ class StockWarehouseOrderpoint(models.Model):
         store=True
     )
 
+    draft_purchase_qty = fields.Float(
+        string='Draft Purchase Qty',
+        compute='_compute_draft_purchase_qty'
+    )
+
+    @api.multi
+    def _compute_draft_purchase_qty(self):
+        op_qtys = self._quantity_in_progress()
+        for order in self:
+            product = op_qtys.get(order.id, 0.0)
+            if product:
+                order.update({
+                    'draft_purchase_qty': product
+                })
     @api.multi
     def _compute_product_available_qty(self):
         operation_by_locaion = defaultdict(
