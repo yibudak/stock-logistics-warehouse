@@ -7,7 +7,7 @@
                    ref="stock_warehouse_orderpoint_stock_info.view_warehouse_orderpoint_tree" />
             <field name="arch" type="xml">
                 <field name="product_location_qty" position="after">
-                    <field name="product_location_qty_available_not_res" />
+                    <field name="product_location_qty_available_not_res" widget="uom" options="{'uom_field': 'product_uom'}"/>
                 </field>
             </field>
         </record>
@@ -19,7 +19,7 @@
                    ref="stock_warehouse_orderpoint_stock_info.view_warehouse_orderpoint_form" />
             <field name="arch" type="xml">
                 <field name="product_location_qty" position="after">
-                    <field name="product_location_qty_available_not_res" />
+                    <field name="product_location_qty_available_not_res" widget="uom" options="{'uom_field': 'product_uom'}"/>
                 </field>
             </field>
         </record>
