@@ -28,4 +28,4 @@ class StockWarehouseOrderpoint(models.Model):
             for order in order_in_loc:
                 product = products[order.product_id.id]
                 order.product_location_qty_available_not_res = \
-                    product['qty_available_not_res']
+                    product['unreserved_quantity']

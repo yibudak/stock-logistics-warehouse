@@ -78,6 +78,8 @@ class ProductProduct(models.Model):
             product.virtual_available = res[product.id]['virtual_available']
             product.qty_available_not_res = res[product.id]['unreserved_quantity']
 
+        return res
+
     def _compute_quantities_dict(self, lot_id, owner_id, package_id, from_date=False, to_date=False):
         domain_quant_loc, domain_move_in_loc, domain_move_out_loc = self._get_domain_locations()
         domain_quant = [('product_id', 'in', self.ids)] + domain_quant_loc
@@ -160,6 +162,9 @@ class ProductProduct(models.Model):
                                                                  precision_rounding=rounding)
 
         return res
+
+    def _compute_qty_available_not_reserved(self):
+        return self._compute_quantities()
 
     def _get_domain_locations(self):
         rec = super(ProductProduct, self)._get_domain_locations()
