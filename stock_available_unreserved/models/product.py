@@ -78,27 +78,6 @@ class ProductProduct(models.Model):
             product.virtual_available = res[product.id]['virtual_available']
             product.qty_available_not_res = res[product.id]['unreserved_quantity']
 
-            # Explode set content and find unreserved quantity
-            if product.product_tmpl_id.set_product:
-                bom_obj = self.env["mrp.bom"].sudo()
-                bom_id = bom_obj._bom_find(product=product)
-                if bom_id:
-                    boms, lines = bom_id.explode(
-                        product, quantity=1, picking_type=bom_id.picking_type_id
-                    )
-                    exploded_set_qty = 0
-                    for line in lines:
-                        unreserved_qty = line[1]["target_product"].qty_available_not_res
-                        factor = line[1]["qty"]
-                        if unreserved_qty > 0 and factor > 0:
-                            set_qty = unreserved_qty / factor
-                        else:
-                            set_qty = 0
-                        exploded_set_qty = min(set_qty, exploded_set_qty) if exploded_set_qty else set_qty
-                    product.qty_available_not_res = exploded_set_qty
-
-                else:
-                    product.qty_available_not_res = 0
         return res
 
     def _compute_quantities_dict(self, lot_id, owner_id, package_id, from_date=False, to_date=False):
